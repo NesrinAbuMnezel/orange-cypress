@@ -15,7 +15,7 @@ class loginPage {
         this.elements.password().type(password);
         this.elements.loginBtn().click();
         cy.get('.oxd-topbar-header-breadcrumb-module').should('contain','Dashboard');
-        this.elements.MainMenuItems().contains('PIM').click();
+        // this.elements.MainMenuItems().contains('PIM').click();
 
     }
     
