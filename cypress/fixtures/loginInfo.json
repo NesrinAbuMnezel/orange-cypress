@@ -1,0 +1,42 @@
+[
+    {
+        "username": "Admin",
+        "password": "admin123",
+        "mainPageLabel": "Dashboard"
+    },
+    {
+        "username": "Admin",
+        "password": "admin1234",
+        "errorMsg": "Invalid credentials"
+    },
+    {
+        "username": "nesrin",
+        "password": "admin123",
+        "errorMsg": "Invalid credentials"
+    },
+    {
+        "username": "nesrin",
+        "password": "rawanas67",
+        "errorMsg": "Invalid credentials"
+    },
+    {
+        "username": " ",
+        "password": " ",
+        "errorMsg": "Required"
+    },
+    {
+        "username": " ",
+        "password": "admin123",
+        "errorMsg": "Required"
+    },
+    {
+        "username": "Admin",
+        "password": " ",
+        "errorMsg": "Required"
+    },
+    {
+        "username": "admin",
+        "password": "admin123",
+        "assertion": "Dashboard"
+    }
+]
