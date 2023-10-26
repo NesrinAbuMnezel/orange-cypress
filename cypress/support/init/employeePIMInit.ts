@@ -1,6 +1,7 @@
 import { ICreateEmployeePIMPayload } from "../../e2e/API/payload/employeePIMAPIPayload";
 import { ICreateUserPIMPayload } from "../../e2e/API/payload/userPIMAPIPayload";
 import GenericHelper from "../helpers/genericFunctions";
+
 export default class employeePIMInit {
   static initEmployeePIM(): ICreateEmployeePIMPayload {
     let createEmployeePIMPayload: ICreateEmployeePIMPayload = {
@@ -23,4 +24,5 @@ export default class employeePIMInit {
     };
     return createUserPIMPayload;
   }
+  
 }
