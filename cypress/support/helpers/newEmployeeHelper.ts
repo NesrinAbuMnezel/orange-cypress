@@ -1,6 +1,8 @@
 import employeePIMInit from "../init/employeePIMInit";
-let Id: number;
+let Id: any;
 let userName:string;
+let firstName:string;
+let lastName:string;
 export const URLs = {
   employee: `https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees`,
   user: `https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/admin/users`,
@@ -14,9 +16,12 @@ export default class addEmployeePIM {
         "POST",
         URLs.employee,
         employeePIMInit.initEmployeePIM()
-      ).then((response) => {
+      )
+      .then((response) => {
         Id = response.data.empNumber;
-        resolve(Id);
+        firstName = response.data.firstName;
+        lastName = response.data.lastName;
+        resolve([Id,firstName,lastName]);
       });
     });
   }

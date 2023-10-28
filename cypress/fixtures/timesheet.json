@@ -1,0 +1,13 @@
+{
+    "adminUser": "Admin",
+    "adminPassword": "admin123",
+    "empPassword": "1234567a",
+    "key": "Employee Name",
+    "action": "SUBMIT",
+    "dates": "2023-10-25",
+    "duration": "03:00",
+    "firstName": "admin",
+    "lastName": "test",
+    "middleName": " ",
+    "username": "admintest"
+}
