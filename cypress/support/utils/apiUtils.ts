@@ -33,6 +33,12 @@ import { ICreateUserPIMPayload } from "../../e2e/API/payload/userPIMAPIPayload";
 import { ICreateEmployeePIMPayload } from "../../e2e/API/payload/employeePIMAPIPayload";
 import { ICreateEmployeePIMResponse } from "../../e2e/API/response/employeePIMAPIResponse";
 import { ICreateUserPIMResponse } from "../../e2e/API/response/userPIMAPIResponse";
+import {ILeaveEntitlementPayload } from "../../e2e/API/payload/leaveEntitlementPayload";
+import {ILeaveRequestPayload } from "../../e2e/API/payload/leaveRequestPayload";
+import { ILeaveRequestResponse } from "../../e2e/API/response/leaveRequestResponse";
+import { IApproveRequestPayload } from "../../e2e/API/payload/approveRequestPayload";
+import { ITimeSheetIdResponse } from "../../e2e/API/response/timesheetIdResponse";
+
 declare global{
     namespace Cypress{
         interface Chainable{
@@ -40,6 +46,15 @@ declare global{
             addNewCandidate: (Method: string, requestUrl: string, employeePayload: ICreateCandidatePayload) => Chainable<ICreateCandidateResponse>
             addNewEmployeePIM: (Method: string, requestUrl: string, employeePayload: ICreateEmployeePIMPayload) => Chainable<ICreateEmployeePIMResponse>
             addNewUserPIM: (Method: string, requestUrl: string, employeePayload: ICreateUserPIMPayload) => Chainable<ICreateUserPIMResponse>
+            addLeaveEntitlements: (Method: string, requestUrl: string, employeePayload: ILeaveEntitlementPayload) => Chainable
+            addLeaveRequest: (Method: string, requestUrl: string, employeePayload: ILeaveRequestPayload) => Chainable<ILeaveRequestResponse>
+            approveLeaveRequest: (Method: string, requestUrl: string, employeePayload: IApproveRequestPayload) => Chainable,
+            TimeSheetId: (Method: string, requestUrl: string, userPayload: any) => Chainable<ITimeSheetIdResponse>
+            addTimeSheet: (Method: string, requestUrl: string, userPayload: any) => Chainable
+
+
+
+
         }
     }
 }
@@ -66,7 +81,7 @@ Cypress.Commands.add('addNewCandidate', (Method: string, requestUrl: string, use
         .its('body')
 })
 Cypress.Commands.add('addNewEmployeePIM', (Method: string, requestUrl: string, userPayload: ICreateEmployeePIMPayload) => {
-    return cy.request({
+    return cy.api({
         method: Method,
         url: requestUrl,
         body: userPayload,
@@ -77,6 +92,61 @@ Cypress.Commands.add('addNewEmployeePIM', (Method: string, requestUrl: string, u
         .its('body')
 })
 Cypress.Commands.add('addNewUserPIM', (Method: string, requestUrl: string, userPayload: ICreateUserPIMPayload) => {
+    return cy.api({
+        method: Method,
+        url: requestUrl,
+        body: userPayload,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .its('body')
+})
+Cypress.Commands.add('addLeaveEntitlements', (Method: string, requestUrl: string, userPayload: ILeaveEntitlementPayload) => {
+    return cy.api({
+        method: Method,
+        url: requestUrl,
+        body: userPayload,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .its('body')
+})
+Cypress.Commands.add('addLeaveRequest', (Method: string, requestUrl: string, userPayload: ILeaveRequestPayload) => {
+    return cy.api({
+        method: Method,
+        url: requestUrl,
+        body: userPayload,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .its('body')
+})
+Cypress.Commands.add('approveLeaveRequest', (Method: string, requestUrl: string, userPayload: IApproveRequestPayload) => {
+    return cy.api({
+        method: Method,
+        url: requestUrl,
+        body: userPayload,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .its('body')
+})
+Cypress.Commands.add('TimeSheetId', (Method: string, requestUrl: string, userPayload:any) => {
+    return cy.request({
+        method: Method,
+        url: requestUrl,
+        body: userPayload,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .its('body')
+})
+Cypress.Commands.add('addTimeSheet', (Method: string, requestUrl: string, userPayload:any) => {
     return cy.request({
         method: Method,
         url: requestUrl,
