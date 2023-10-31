@@ -15,7 +15,7 @@ module.exports = defineConfig({
       on('task',{
         async convertXlsxToJson(xlsxPath:any){
           const workbook=XLSX.readFile(xlsxPath)
-          const worksheet = workbook.Sheets[workbook.SheetNames[0]]
+          const worksheet = workbook.Sheets[workbook.SheetNames[1]]
           const jsonData = XLSX.utils.sheet_to_json(worksheet)
           const fileName=path.basename(xlsxPath,'.xlsx')
           const jsonFilePath = `cypress/fixtures/${fileName}.json`

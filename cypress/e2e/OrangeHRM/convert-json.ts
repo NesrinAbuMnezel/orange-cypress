@@ -29,7 +29,6 @@ describe('OrangeHRM',()=>{
         EditVacancy.assertionFun(dataToAssert2)
         const xlsxPath:string='cypress/downloads/test1.xlsx'
         const jsonName:string=path.basename(xlsxPath).replace('xlsx','json')
-        cy.log(jsonName)
         cy.task('convertXlsxToJson',xlsxPath)
         cy.fixture(jsonName).as('userInfo')
         cy.get('@userInfo').should('have.length',1).then((userInfo:any)=>{
