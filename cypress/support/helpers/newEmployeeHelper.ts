@@ -1,9 +1,11 @@
 import employeePIMInit from "../init/employeePIMInit";
 let Id: number;
-let userName: string;
+let userName:string;
 export const URLs = {
   employee: `https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees`,
   user: `https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/admin/users`,
+ 
+
 };
 export default class addEmployeePIM {
   static addNewEmployeeViaAPI() {
@@ -29,4 +31,5 @@ export default class addEmployeePIM {
       );
     });
   }
+
 }
